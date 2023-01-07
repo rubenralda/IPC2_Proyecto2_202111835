@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="d-grid gap-2 col-6 mx-auto">
+<div class="container py-4">
+  <h1 style="text-align: center;" class="text-white"> Crear una nueva empresa </h1>
+</div>
+<div class="container py-5">
+  <div class="row">
+    <div class="col">
+      <form action="/crearEmpresa/" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="artist" class="form-label text-white">ID:</label>
+          <input type="text" class="form-control" id="id" name="id">
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label text-white">Nombre:</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Empresa</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container py-3">
+  {% if texto %}   
+      <h2 class="text-white">{{texto}}</h2>
+  {% else %}
+      <h2 class="text-white"></h2>
+  {% endif %}
+</div>
+</div>
+{% endblock content %}

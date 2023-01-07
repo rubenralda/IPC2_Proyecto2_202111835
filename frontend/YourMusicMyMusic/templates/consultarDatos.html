@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5 h-100">
+  <label class="form-label text-white fs-1">Empresas</label>
+  <br>
+  <table class="table table-success table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      {% for empresa in empresas%}
+      <tr>
+        <th scope="row">{{empresa.id}}</th>
+        <td>{{empresa.nombre}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="container py-5 h-100">
+  <label class="form-label text-white fs-1">Clientes</label>
+  <br>
+  <table class="table table-success table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">Nit</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Clave</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Empresa</th>
+        <th scope="col">Id playList</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      {% for cliente in clientes%}
+      <tr>
+        <th scope="row">{{cliente.nit}}</th>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.usuario}}</td>
+        <td>{{cliente.clave}}</td>
+        <td>{{cliente.direccion}}</td>
+        <td>{{cliente.correo}}</td>
+        <td>{{cliente.empresa}}</td>
+        <td>
+          {%for play in cliente.playList%}{{play}},{% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="container py-5 h-100">
+  <label class="form-label text-white fs-1">PlayList</label>
+  <br>
+  <table class="table table-success table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nit del Cliente</th>
+        <th scope="col">Vinilo</th>
+        <th scope="col">Compacto</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Nombre Cancion</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      {% for lista in playList%}
+      <tr>
+        <th scope="row">{{lista.id}}</th>
+        <td>{{lista.nitCliente}}</td>
+        <td>{{lista.Vynil}}</td>
+        <td>{{lista.compacto}}</td>
+        <td>{{lista.categoria}}</td>
+        <td>
+          <div class="input-group mb-3">
+            <select class="form-select" id="inputGroupSelect01">
+              {% for cancion in lista.canciones%}<option value="1">{{cancion.nombre}}</option>{% endfor %}
+            </select>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="container py-5 h-100">
+  <label class="form-label text-white fs-1">Canciones</label>
+  <br>
+  <table class="table table-success table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Año</th>
+        <th scope="col">Artista</th>
+        <th scope="col">Genero</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      {% for cancion in canciones%}
+      <tr>
+        <th scope="row">{{cancion.id}}</th>
+        <td>{{cancion.nombre}}</td>
+        <td>{{cancion.anio}}</td>
+        <td>{{cancion.artista}}</td>
+        <td>{{cancion.genero}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

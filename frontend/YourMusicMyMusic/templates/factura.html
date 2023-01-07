@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/factura/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br><br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="mb-3">
+            <label for="configuracion" class="form-label text-white fs-1">Ingresa el ID de la empresa</label>
+            <input type="input" class="form-control" id="empresa" name="empresa">
+        </div>
+        <button class="btn btn-primary" type="submit">Crear Factura</button>
+    </div>
+    {% if empresa %}
+    <br>
+    <label class="form-label text-white fs-1">Factura No. {{noFactura}}</label><br>
+    <label class="form-label text-white fs-1 text-end">Empresa: {{empresa}}</label><br>
+    <label class="form-label text-white fs-1">Clientes:</label><br>
+    {% for cliente in clientes%}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <label class="form-label text-white">Nit: {{cliente.nit}}</label>
+        <label class="form-label text-white">Nombre: {{cliente.nombre}}</label>
+        <label class="form-label text-white">Correo: {{cliente.correo}}</label>
+        <label class="form-label text-white">PlayList</label>
+        <table class="table table-success table-striped-columns">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Monto</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for lista in cliente.playList%}
+                <tr>
+                    <th scope="row">{{lista.id}}</th>
+                    <td>{{lista.categoria}}</td>
+                    <td>{{lista.monto}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+    <label class="form-label text-white fs-1">Total: {{Total}}</label>
+    {% endif %}
+
+</form>
+
+{% endblock content %}

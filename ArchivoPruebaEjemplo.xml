@@ -1,0 +1,97 @@
+<configuracion>
+	<playlistClientes>
+		<playlist id='002'>
+			<nitCliente>98939203</nitCliente>
+			<vinyl>True</vinyl> 500
+			<compacto>True</compacto> 100
+			<categoria>Fiesta</categoria>
+			<canciones>
+				<cancion id='1'>
+					<nombre>Chiquitita</nombre>
+					<anio>1960</anio>   25
+					<artista>Abba</artista>
+					<genero>Pop</genero>
+				</cancion>
+				<cancion id='2'>
+					<nombre>El Triste</nombre>
+					<anio>1988</anio>   15
+					<artista>Jose Jose</artista>
+					<genero>Clasica</genero>
+				</cancion>
+			</canciones>
+		</playlist>
+		<playlist id='003'>
+			<nitCliente>98939203</nitCliente>
+			<vinyl>True</vinyl> 500
+			<compacto>True</compacto> 100
+			<categoria>Fiesta</categoria>
+			<canciones>
+				<cancion id='1'>
+					<nombre>Chiquitita</nombre>
+					<anio>1960</anio>   25
+					<artista>Abba</artista>
+					<genero>Pop</genero>
+				</cancion>
+				<cancion id='2'>
+					<nombre>El Triste</nombre>
+					<anio>1988</anio>   15
+					<artista>Jose Jose</artista>
+					<genero>Clasica</genero>
+				</cancion>
+			</canciones>
+		</playlist>
+		<playlist id='004'>
+			<nitCliente>684071k</nitCliente>
+			<vinyl>True</vinyl> 500
+			<compacto>True</compacto> 100
+			<categoria>Fiesta</categoria>
+			<canciones>
+				<cancion id='1'>
+					<nombre>Chiquitita</nombre>
+					<anio>1960</anio>   25
+					<artista>Abba</artista>
+					<genero>Pop</genero>
+				</cancion>
+				<cancion id='2'>
+					<nombre>El Triste</nombre>
+					<anio>1988</anio>   15
+					<artista>Jose Jose</artista>
+					<genero>Clasica</genero>
+				</cancion>
+			</canciones>
+		</playlist>
+	</playlistClientes>
+	<listaClientes>
+		<cliente nit='98939203'>
+			<nombre> Jackeline Benitez </nombre>
+			<usuario> jacks128 </usuario>
+			<clave> Kirby123 </clave>
+			<direccion> 16 calle </direccion>
+			<correoElectronico> jacky@gmail.com </correoElectronico>
+			<empresa>A102</empresa>
+			<playlistsAsociadas>
+				<playlist>002</playlist>
+				<playlist>003</playlist>
+			</playlistsAsociadas>
+		</cliente>
+		<cliente nit='684071K'>
+			<nombre> JorgePerez </nombre>
+			<usuario> perecito </usuario>
+			<clave> Kirby123 </clave>
+			<direccion> 16 calle </direccion>
+			<correoElectronico> jperez@gmail.com </correoElectronico>
+			<empresa>A103</empresa>
+			<playlistsAsociadas>
+				<playlist>004</playlist>
+			</playlistsAsociadas>
+		</cliente>
+	</listaClientes>
+	<listaEmpresas>
+		<empresa id='A102'>
+			<nombre>Cacahuate Company</nombre>
+		</empresa>
+		<empresa id='A103'>
+			<nombre>Lechuga Company</nombre>
+		</empresa>
+	</listaEmpresas>
+</configuracion>
